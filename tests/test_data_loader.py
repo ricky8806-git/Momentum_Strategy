@@ -1,21 +1,29 @@
 import pandas as pd
 import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from data_loader import get_sp500_symbols, fetch_prices
 
 
 def test_get_sp500_symbols_returns_list_of_strings():
     """get_sp500_symbols should return a non-empty list of ticker strings."""
-    symbols = get_sp500_symbols()
+    import io
+    mock_csv_content = "Symbol,Name,Sector\nAAPL,Apple Inc,Technology\nMSFT,Microsoft,Technology\nBRK.B,Berkshire,Financials\n" + \
+                       "\n".join(f"STK{i:03d},Stock {i},Technology" for i in range(400))
+    mock_df = pd.read_csv(io.StringIO(mock_csv_content))
+    with patch("data_loader.pd.read_csv") as mock_read:
+        mock_read.return_value = mock_df
+        symbols = get_sp500_symbols()
     assert isinstance(symbols, list)
     assert len(symbols) > 400
     assert all(isinstance(s, str) for s in symbols)
+    # Verify dot-to-dash conversion
+    assert "BRK-B" in symbols
+    assert "BRK.B" not in symbols
 
 
 def test_fetch_prices_returns_dataframe_with_expected_columns():
     """fetch_prices should return a DataFrame with OHLCV columns per ticker."""
     with patch("data_loader.yf.download") as mock_dl:
-        # Build a minimal multi-index DataFrame mimicking yfinance output
         dates = pd.bdate_range("2024-01-02", periods=5)
         cols = pd.MultiIndex.from_product(
             [["Open", "High", "Low", "Close", "Volume"], ["AAPL", "MSFT"]],
@@ -41,6 +49,5 @@ def test_fetch_prices_includes_spy():
         mock_dl.return_value = data
 
         df = fetch_prices(["AAPL"], "2024-01-02", "2024-01-08")
-        # SPY should be added even if not in symbols list
         tickers_in_close = df["Close"].columns.tolist()
         assert "SPY" in tickers_in_close

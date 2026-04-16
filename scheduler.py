@@ -146,8 +146,9 @@ def run_rebalance(dry_run: bool = False) -> None:
         shares = state["holdings"].get(t, {}).get("shares", 0)
         price  = float(ex.get("price") or open_today.get(t, 0.0))
         result = broker.submit_market_order(t, "sell", shares, dry_run=dry_run)
-        _log_trade(today_str, t, "sell", shares, price, ex["reason"],
-                   state["nav"], result.get("order_id", ""))
+        if not dry_run:
+            _log_trade(today_str, t, "sell", shares, price, ex["reason"],
+                       state["nav"], result.get("order_id", ""))
 
     cash_freed = apply_exits(state, all_exits)
 
@@ -173,8 +174,9 @@ def run_rebalance(dry_run: bool = False) -> None:
         shares = state["holdings"][t]["shares"]
         price  = float(open_today.get(t, 0.0))
         result = broker.submit_market_order(t, "buy", shares, dry_run=dry_run)
-        _log_trade(today_str, t, "buy", shares, price, "entry",
-                   state["nav"], result.get("order_id", ""))
+        if not dry_run:
+            _log_trade(today_str, t, "buy", shares, price, "entry",
+                       state["nav"], result.get("order_id", ""))
 
     # ── SPY sleeve ────────────────────────────────────────────────────────
     idle_now = compute_idle_cash(state, close_today)
@@ -182,29 +184,31 @@ def run_rebalance(dry_run: bool = False) -> None:
     old_spy = state["spy_shares"]
     adjust_spy_sleeve(state, idle_now, spy_price)
     spy_delta = state["spy_shares"] - old_spy
-    if abs(spy_delta) >= 0.5:
+    spy_order_qty = int(abs(spy_delta))  # Alpaca requires whole shares for market orders
+    if spy_order_qty >= 1:
         side   = "buy" if spy_delta > 0 else "sell"
-        result = broker.submit_market_order("SPY", side, abs(spy_delta), dry_run=dry_run)
-        _log_trade(today_str, "SPY", side, abs(spy_delta), spy_price, "spy_sleeve",
-                   state["nav"], result.get("order_id", ""))
+        result = broker.submit_market_order("SPY", side, spy_order_qty, dry_run=dry_run)
+        if not dry_run:
+            _log_trade(today_str, "SPY", side, spy_order_qty, spy_price, "spy_sleeve",
+                       state["nav"], result.get("order_id", ""))
 
-    # ── Update state ──────────────────────────────────────────────────────
+    # ── Update state (skipped in dry-run — no real orders were placed) ──────
     state["last_rebalance"] = today_str
     state["nav"] = broker.get_account_nav(dry_run=dry_run)
-    save_state(state)
-
-    # ── Log rebalance summary ─────────────────────────────────────────────
-    spy_val = state["spy_shares"] * spy_price
-    spy_pct = spy_val / state["nav"] if state["nav"] > 0 else 0.0
-    _log_rebalance(
-        today_str,
-        len(state["holdings"]),
-        state["nav"],
-        spy_pct,
-        entries_to_buy,
-        [e["ticker"] for e in filter_exits],
-        stop_tickers,
-    )
+    if not dry_run:
+        save_state(state)
+        # ── Log rebalance summary ─────────────────────────────────────────
+        spy_val = state["spy_shares"] * spy_price
+        spy_pct = spy_val / state["nav"] if state["nav"] > 0 else 0.0
+        _log_rebalance(
+            today_str,
+            len(state["holdings"]),
+            state["nav"],
+            spy_pct,
+            entries_to_buy,
+            [e["ticker"] for e in filter_exits],
+            stop_tickers,
+        )
     print(f"  Done. Holdings: {len(state['holdings'])}  NAV: ${state['nav']:,.2f}")
 
 

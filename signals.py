@@ -7,8 +7,6 @@ import numpy as np
 
 import config
 
-RANGE_WINDOW = 20  # business days for high/low range (sourced here, not in config)
-
 
 # ── Per-ticker indicators ─────────────────────────────────────────────────
 
@@ -23,8 +21,8 @@ def compute_indicators(close: pd.Series) -> pd.DataFrame:
     df["ma100"] = close.rolling(config.MA_MID).mean()
     df["ma200"] = close.rolling(config.MA_LONG).mean()
 
-    hi20 = close.rolling(RANGE_WINDOW).max()
-    lo20 = close.rolling(RANGE_WINDOW).min()
+    hi20 = close.rolling(config.RANGE_WINDOW).max()
+    lo20 = close.rolling(config.RANGE_WINDOW).min()
     rng  = hi20 - lo20
     df["range_pos"] = np.where(rng > 0, (close - lo20) / rng, np.nan)
     df["high20"]    = hi20

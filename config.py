@@ -13,6 +13,7 @@ WARMUP_DAYS = 260          # extra business days fetched before start date
 MA_SHORT  = 50
 MA_MID    = 100
 MA_LONG   = 200
+RANGE_WINDOW = 20          # business days for 20-day high/low range
 
 # ── Hard-filter thresholds ───────────────────────────────────────────────
 RANGE_POS_MIN   = 0.65     # (close - 20d_low) / (20d_high - 20d_low) >= this

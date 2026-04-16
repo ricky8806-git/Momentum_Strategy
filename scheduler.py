@@ -157,7 +157,14 @@ def run_rebalance(dry_run: bool = False) -> None:
     entry_orders = [{"ticker": t, "price": float(open_today.get(t, 0.0))}
                     for t in entries_to_buy]
 
+    # Refresh estimated NAV before entry sizing
     idle = compute_idle_cash(state, close_today) + cash_freed
+    equity_now = sum(
+        pos["shares"] * close_today.get(t, pos["entry_price"])
+        for t, pos in state["holdings"].items()
+    )
+    spy_val_now = state["spy_shares"] * close_today.get("SPY", 0.0)
+    state["nav"] = equity_now + spy_val_now + idle
     apply_entries(state, entry_orders, idle, n_total, today_str)
 
     for t in entries_to_buy:

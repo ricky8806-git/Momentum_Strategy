@@ -44,6 +44,7 @@ def test_backtest_runs_without_error():
 
     assert isinstance(results, pd.DataFrame)
     assert "nav" in results.columns
+    assert "n_holdings" in results.columns
     assert len(results) > 0
 
 

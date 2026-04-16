@@ -125,3 +125,22 @@ def test_adjust_spy_sleeve_sets_shares():
     adjust_spy_sleeve(state, idle_cash, spy_price)
     expected_shares = idle_cash / spy_price
     assert state["spy_shares"] == pytest.approx(expected_shares, rel=0.01)
+
+
+def test_compute_idle_cash_deducts_equity_and_spy():
+    """compute_idle_cash should return NAV minus equity value minus SPY sleeve value."""
+    from portfolio import compute_idle_cash
+    state = {
+        "holdings": {
+            "AAPL": {"shares": 10.0, "entry_price": 150.0, "entry_date": "2024-01-02"},
+        },
+        "spy_shares": 100.0,
+        "nav": 200_000.0,
+        "last_rebalance": None,
+    }
+    current_prices = {"AAPL": 160.0, "SPY": 480.0}
+    # equity = 10 * 160 = 1600
+    # spy = 100 * 480 = 48000
+    # idle = 200000 - 1600 - 48000 = 150400
+    idle = compute_idle_cash(state, current_prices)
+    assert idle == pytest.approx(150_400.0)

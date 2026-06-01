@@ -79,6 +79,117 @@ def _log_rebalance(
                          "|".join(entries), "|".join(exits), "|".join(stop_losses)])
 
 
+# ── Per-run markdown report ───────────────────────────────────────────────
+
+def generate_report(
+    report_path: str,
+    signal_day: pd.Timestamp,
+    nav: float,
+    n_universe: int,
+    n_scanned: int,
+    eligible_pass: pd.DataFrame,
+    entries: list[dict],
+    exits: list[dict],
+    held_tickers: list[str],
+) -> None:
+    """
+    Write a markdown rebalance summary to report_path.
+
+    eligible_pass : DataFrame with [ticker, score, passes_filter, ret_long, ret_short, rank]
+                    sorted by score descending.
+    entries       : list of {ticker, shares, price}
+    exits         : list of {ticker, shares, price, reason}
+    held_tickers  : tickers carried over with no action this run
+    """
+    run_str   = pd.Timestamp.now().strftime("%Y-%m-%d")
+    sig_str   = signal_day.strftime("%Y-%m-%d")
+    n_pass    = len(eligible_pass)
+    top_n     = eligible_pass.head(config.TOP_N)
+    entry_set = {e["ticker"] for e in entries}
+
+    lines: list[str] = [
+        f"# Momentum Strategy Rebalance — {run_str}",
+        "",
+        "## Summary",
+        f"- **Signal Date (Friday):** {sig_str}",
+        f"- **Post-Rebalance NAV:** ${nav:,.2f}",
+        f"- **Holdings:** {len(held_tickers) + len(entries)}",
+        "",
+        "## Universe Scan",
+        "| Step | Count |",
+        "|------|-------|",
+        f"| S&P 500 symbols attempted | {n_universe} |",
+        f"| Sufficient price history  | {n_scanned} |",
+        f"| Passed all 5 hard filters | {n_pass} |",
+        f"| Selected (Top {config.TOP_N}) | {min(n_pass, config.TOP_N)} |",
+        "",
+        "### Hard Filter Criteria",
+        "1. Close > 100-day MA",
+        "2. Close > 200-day MA",
+        "3. 50-day MA > 200-day MA",
+        f"4. Range position ≥ {config.RANGE_POS_MIN:.0%} of 20-day high-low range",
+        f"5. Close ≥ {config.HIGH20_MIN_PCT:.0%} of 20-day high",
+        "",
+        f"## Selected Portfolio (Top {config.TOP_N} by momentum score)",
+        "| Rank | Ticker | Score | 6M Return | 3M Return | Action |",
+        "|------|--------|-------|-----------|-----------|--------|",
+    ]
+
+    for _, row in top_n.iterrows():
+        action = "**NEW ENTRY**" if row["ticker"] in entry_set else "held"
+        ret_l  = f"{row['ret_long']  * 100:+.1f}%" if pd.notna(row["ret_long"])  else "—"
+        ret_s  = f"{row['ret_short'] * 100:+.1f}%" if pd.notna(row["ret_short"]) else "—"
+        lines.append(
+            f"| {int(row['rank'])} | {row['ticker']} "
+            f"| {row['score']:.3f} | {ret_l} | {ret_s} | {action} |"
+        )
+
+    lines.append("")
+
+    if exits:
+        lines += [
+            "## Exits",
+            "| Ticker | Shares | Price | Reason |",
+            "|--------|--------|-------|--------|",
+        ]
+        for ex in exits:
+            lines.append(
+                f"| {ex['ticker']} | {int(ex.get('shares', 0))} "
+                f"| ${float(ex.get('price', 0)):.2f} | {ex.get('reason', '')} |"
+            )
+    else:
+        lines += ["## Exits", "_No exits this week._"]
+    lines.append("")
+
+    if entries:
+        lines += [
+            "## Entries",
+            "| Ticker | Shares | Price | Est. Cost |",
+            "|--------|--------|-------|-----------|",
+        ]
+        for en in entries:
+            cost = en.get("shares", 0) * en.get("price", 0)
+            lines.append(
+                f"| {en['ticker']} | {int(en.get('shares', 0))} "
+                f"| ${float(en.get('price', 0)):.2f} | ${cost:,.0f} |"
+            )
+    else:
+        lines += ["## Entries", "_No new entries this week._"]
+    lines.append("")
+
+    if held_tickers:
+        lines += [
+            "## Continued Holdings (no action)",
+            ", ".join(sorted(held_tickers)),
+            "",
+        ]
+
+    os.makedirs(os.path.dirname(os.path.abspath(report_path)), exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+    print(f"  Report saved → {report_path}")
+
+
 # ── Core rebalance logic ──────────────────────────────────────────────────
 
 def run_rebalance(dry_run: bool = False) -> None:
@@ -145,6 +256,7 @@ def run_rebalance(dry_run: bool = False) -> None:
     for ex in all_exits:
         t = ex["ticker"]
         shares = state["holdings"].get(t, {}).get("shares", 0)
+        ex["shares"] = shares                                      # persist for report
         price  = float(ex.get("price") or open_today.get(t, 0.0))
         result = broker.submit_market_order(t, "sell", shares, dry_run=dry_run)
         if not dry_run:
@@ -215,6 +327,27 @@ def run_rebalance(dry_run: bool = False) -> None:
             entries_executed,
             [e["ticker"] for e in filter_exits],
             stop_tickers,
+        )
+        # ── Per-run markdown report ───────────────────────────────────────
+        entries_detail = [
+            {
+                "ticker": t,
+                "shares": state["holdings"][t]["shares"],
+                "price":  float(open_today.get(t, 0.0)),
+            }
+            for t in entries_executed
+        ]
+        held_tickers_list = [t for t in state["holdings"] if t not in set(entries_executed)]
+        generate_report(
+            report_path=os.path.join("reports", f"{today_str}_rebalance_report.md"),
+            signal_day=signal_day,
+            nav=state["nav"],
+            n_universe=len(symbols),
+            n_scanned=len(eligible),
+            eligible_pass=eligible_pass,
+            entries=entries_detail,
+            exits=all_exits,
+            held_tickers=held_tickers_list,
         )
     print(f"  Done. Holdings: {len(state['holdings'])}  NAV: ${state['nav']:,.2f}")
 

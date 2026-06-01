@@ -90,9 +90,19 @@ def get_eligible_tickers(
         ind  = compute_indicators(series)
         last = ind.loc[as_of_date]
         passes = apply_hard_filters(last)
-        score  = compute_momentum_score(series) if passes else float("nan")
-        results.append({"ticker": ticker, "score": score,
-                         "passes_filter": passes})
+        score     = compute_momentum_score(series) if passes else float("nan")
+        ret_long  = float("nan")
+        ret_short = float("nan")
+        if passes and len(series) >= config.MOM_WINDOW_LONG + 1:
+            ret_long  = float(series.iloc[-1] / series.iloc[-(config.MOM_WINDOW_LONG + 1)] - 1)
+            ret_short = float(series.iloc[-1] / series.iloc[-(config.MOM_WINDOW_SHORT + 1)] - 1)
+        results.append({
+            "ticker":        ticker,
+            "score":         score,
+            "passes_filter": passes,
+            "ret_long":      ret_long,
+            "ret_short":     ret_short,
+        })
     return pd.DataFrame(results)
 
 

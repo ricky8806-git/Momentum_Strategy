@@ -26,6 +26,8 @@ def main() -> None:
                        help="Start live weekly scheduler")
     group.add_argument("--dry-run",  action="store_true",
                        help="Run one rebalance in dry-run mode (no orders placed)")
+    group.add_argument("--run-once", action="store_true",
+                       help="Execute one live rebalance immediately (for CI/cloud use)")
 
     parser.add_argument("--start",   default="2022-01-03",
                         help="Backtest start date (YYYY-MM-DD)")
@@ -54,6 +56,10 @@ def main() -> None:
     elif args.dry_run:
         from scheduler import run_rebalance
         run_rebalance(dry_run=True)
+
+    elif args.run_once:
+        from scheduler import run_rebalance
+        run_rebalance(dry_run=False)
 
 
 if __name__ == "__main__":

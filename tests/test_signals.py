@@ -6,6 +6,7 @@ from signals import (
     apply_hard_filters,
     compute_momentum_score,
     rank_universe,
+    get_eligible_tickers,
 )
 
 
@@ -60,6 +61,19 @@ def test_compute_momentum_score_uses_weights():
     ret_63  = close.iloc[-1] / close.iloc[-64] - 1
     expected = 0.60 * ret_126 + 0.40 * ret_63
     assert abs(score - expected) < 1e-10
+
+
+def test_eligible_tickers_exposes_return_components():
+    """get_eligible_tickers() must include ret_long and ret_short columns."""
+    idx    = pd.bdate_range("2022-01-03", periods=260)
+    prices = pd.DataFrame({"AAPL": np.linspace(100, 160, 260)}, index=idx)
+    result = get_eligible_tickers(prices, idx[-1])
+    assert "ret_long"  in result.columns, "ret_long column missing"
+    assert "ret_short" in result.columns, "ret_short column missing"
+    row = result[result["ticker"] == "AAPL"]
+    assert len(row) == 1
+    assert isinstance(float(row.iloc[0]["ret_long"]),  float)
+    assert isinstance(float(row.iloc[0]["ret_short"]), float)
 
 
 def test_rank_universe_returns_top_n():

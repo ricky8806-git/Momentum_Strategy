@@ -1,0 +1,43 @@
+name: Weekly Momentum Rebalance
+
+on:
+  schedule:
+    # Every Monday 14:35 UTC = 9:35 AM EST (winter) / 10:35 AM EDT (summer)
+    - cron: '35 14 * * 1'
+  workflow_dispatch:   # Allow manual trigger from the GitHub Actions UI
+
+permissions:
+  contents: write      # Required to push state + report files back to repo
+
+jobs:
+  rebalance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run weekly rebalance
+        env:
+          ALPACA_API_KEY:    ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_BASE_URL:   ${{ secrets.ALPACA_BASE_URL }}
+        run: python main.py --run-once
+
+      - name: Commit updated state and report
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add portfolio_state.json trades_log.csv rebalance_log.csv reports/
+          git diff --staged --quiet || git commit -m "rebalance: $(date -u +%Y-%m-%d)"
+          git pull --rebase && git push

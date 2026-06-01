@@ -2,7 +2,7 @@
 
 ## Summary
 - **Signal Date (Friday):** 2026-05-29
-- **Post-Rebalance NAV:** $132,541.10
+- **Post-Rebalance NAV:** $132,990.44
 - **Holdings:** 15
 
 ## Universe Scan
@@ -32,29 +32,19 @@
 | 7 | CIEN | 1.440 | +195.7% | +66.4% | held |
 | 8 | ON | 1.224 | +149.7% | +81.4% | held |
 | 9 | HPE | 1.031 | +104.0% | +101.8% | held |
-| 10 | DDOG | 0.817 | +55.6% | +120.9% | **NEW ENTRY** |
-| 11 | TER | 0.809 | +123.4% | +17.0% | **NEW ENTRY** |
+| 10 | DDOG | 0.817 | +55.6% | +120.9% | held |
+| 11 | TER | 0.809 | +123.4% | +17.0% | held |
 | 12 | LRCX | 0.805 | +110.0% | +36.2% | held |
 | 13 | FTNT | 0.722 | +70.6% | +74.6% | held |
-| 14 | PANW | 0.664 | +51.2% | +89.2% | **NEW ENTRY** |
-| 15 | NTAP | 0.655 | +57.9% | +76.9% | **NEW ENTRY** |
+| 14 | PANW | 0.664 | +51.2% | +89.2% | held |
+| 15 | NTAP | 0.655 | +57.9% | +76.9% | held |
 
 ## Exits
-| Ticker | Shares | Price | Reason |
-|--------|--------|-------|--------|
-| COHR | 21 | $375.65 | filter_exit |
-| GLW | 35 | $184.08 | filter_exit |
-| TXN | 21 | $316.48 | filter_exit |
-| INTC | 69 | $123.85 | filter_exit |
+_No exits this week._
 
 ## Entries
-| Ticker | Shares | Price | Est. Cost |
-|--------|--------|-------|-----------|
-| TER | 17 | $385.16 | $6,548 |
-| DDOG | 29 | $234.00 | $6,786 |
-| NTAP | 38 | $176.69 | $6,714 |
-| PANW | 26 | $256.32 | $6,664 |
+_No new entries this week._
 
 ## Continued Holdings (no action)
-AMD, CIEN, DELL, FTNT, HPE, LRCX, MU, ON, SNDK, STX, WDC
+AMD, CIEN, DDOG, DELL, FTNT, HPE, LRCX, MU, NTAP, ON, PANW, SNDK, STX, TER, WDC
 

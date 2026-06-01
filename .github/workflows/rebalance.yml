@@ -9,6 +9,9 @@ on:
 permissions:
   contents: write      # Required to push state + report files back to repo
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   rebalance:
     runs-on: ubuntu-latest

@@ -112,6 +112,26 @@ def test_apply_entries_deploys_cash():
     assert state["holdings"]["NVDA"]["shares"] > 0
 
 
+def test_apply_entries_splits_cash_fairly():
+    """When cash is tight, each new entry gets an equal share so later ones aren't starved."""
+    state = {
+        "holdings": {},
+        "spy_shares": 0.0,
+        "nav": 100_000.0,
+        "last_rebalance": None,
+    }
+    cash_available = 400.0  # $200 per entry
+    entries = [
+        {"ticker": "AAPL", "price": 150.0},
+        {"ticker": "MSFT", "price": 150.0},
+    ]
+    apply_entries(state, entries, cash_available, n_total=15, entry_date="2024-01-08")
+    assert "AAPL" in state["holdings"]
+    assert "MSFT" in state["holdings"]
+    assert state["holdings"]["AAPL"]["shares"] == 1.0
+    assert state["holdings"]["MSFT"]["shares"] == 1.0
+
+
 def test_adjust_spy_sleeve_sets_shares():
     state = {
         "holdings": {"AAPL": {"shares": 10.0, "entry_price": 150.0, "entry_date": "2024-01-02"}},

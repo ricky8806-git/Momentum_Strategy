@@ -97,18 +97,20 @@ def apply_entries(
 ) -> None:
     """
     Buy entries from available cash.  Each entry dict must have {ticker, price}.
+    Cash is divided evenly across all new entries so later ones aren't starved.
     Modifies state["holdings"] in-place.
     """
-    for entry in entries:
+    new_entries = [e for e in entries if e["ticker"] not in state["holdings"]]
+    if not new_entries or cash_available <= 0:
+        return
+    per_entry_cash = cash_available / len(new_entries)
+    for entry in new_entries:
         ticker = entry["ticker"]
         price  = entry["price"]
-        if ticker in state["holdings"]:
-            continue  # already held
         shares = compute_entry_size(state["nav"], n_total, price)
         cost   = shares * price
-        if cost > cash_available:
-            # Deploy what's available
-            shares = math.floor(cash_available / price)
+        if cost > per_entry_cash:
+            shares = math.floor(per_entry_cash / price)
             cost   = shares * price
         if shares <= 0:
             continue
@@ -117,16 +119,15 @@ def apply_entries(
             "entry_price": float(price),
             "entry_date":  entry_date,
         }
-        cash_available -= cost
 
 
 # ── SPY sleeve ────────────────────────────────────────────────────────────
 
 def adjust_spy_sleeve(state: dict, idle_cash: float, spy_price: float) -> None:
-    """Set spy_shares so that the entire idle_cash is invested in SPY."""
+    """Set spy_shares so that idle_cash is invested in SPY (floored at 0)."""
     if spy_price <= 0:
         return
-    state["spy_shares"] = idle_cash / spy_price
+    state["spy_shares"] = max(0.0, idle_cash / spy_price)
 
 
 def compute_idle_cash(state: dict, current_prices: dict[str, float]) -> float:

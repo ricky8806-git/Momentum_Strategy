@@ -93,21 +93,22 @@ def run_rebalance(dry_run: bool = False) -> None:
     today_str = today.strftime("%Y-%m-%d")
     print(f"\n[{today_str}] Starting rebalance (dry_run={dry_run})")
 
-    # ── Load state ────────────────────────────────────────────────────────
+    # ── Load state & sync account values from Alpaca ──────────────────────
     state = load_state()
-    if state["nav"] == 0.0:
-        state["nav"] = broker.get_account_nav(dry_run=dry_run)
-        print(f"  Bootstrapped NAV: ${state['nav']:,.2f}")
+    account_nav  = broker.get_account_nav(dry_run=dry_run)
+    account_cash = broker.get_account_cash(dry_run=dry_run)
+    state["nav"] = account_nav
+    print(f"  NAV: ${account_nav:,.2f}  Cash: ${account_cash:,.2f}")
 
     # ── Fetch prices ──────────────────────────────────────────────────────
     symbols = data_loader.get_sp500_symbols()
     fetch_start = (today - pd.offsets.BDay(config.WARMUP_DAYS)).strftime("%Y-%m-%d")
     prices = data_loader.fetch_prices(symbols, fetch_start, today_str)
 
-    # Signal day = most recent Friday on or before today
-    bdays = pd.bdate_range(fetch_start, today_str)
-    fridays = [d for d in bdays if d.weekday() == 4]
-    signal_day = fridays[-1] if fridays else today
+    # Signal day = most recent Friday that has price data
+    price_index = prices.index
+    available_fridays = [d for d in price_index if d.weekday() == 4]
+    signal_day = available_fridays[-1] if available_fridays else price_index[-1]
 
     # ── Friday signals ────────────────────────────────────────────────────
     eligible = get_eligible_tickers(prices.loc[:signal_day], signal_day)
@@ -158,14 +159,8 @@ def run_rebalance(dry_run: bool = False) -> None:
     entry_orders = [{"ticker": t, "price": float(open_today.get(t, 0.0))}
                     for t in entries_to_buy]
 
-    # Refresh estimated NAV before entry sizing
-    idle = compute_idle_cash(state, close_today) + cash_freed
-    equity_now = sum(
-        pos["shares"] * close_today.get(t, pos["entry_price"])
-        for t, pos in state["holdings"].items()
-    )
-    spy_val_now = state["spy_shares"] * close_today.get("SPY", 0.0)
-    state["nav"] = equity_now + spy_val_now + idle
+    # Use real Alpaca cash (+ proceeds from any exits just submitted) for sizing
+    idle = account_cash + cash_freed
     apply_entries(state, entry_orders, idle, n_total, today_str)
 
     for t in entries_to_buy:
@@ -179,8 +174,17 @@ def run_rebalance(dry_run: bool = False) -> None:
                        state["nav"], result.get("order_id", ""))
 
     # ── SPY sleeve ────────────────────────────────────────────────────────
-    idle_now = compute_idle_cash(state, close_today)
+    # Compute idle cash after entries, then size SPY sleeve against real position
+    entry_costs = sum(
+        state["holdings"][t]["shares"] * open_today.get(t, 0.0)
+        for t in entries_to_buy
+        if t in state["holdings"]
+    )
+    idle_now = account_cash + cash_freed - entry_costs
     spy_price = float(open_today.get("SPY") or close_today.get("SPY") or 0.0)
+    # Sync spy_shares to actual Alpaca position before computing delta
+    actual_spy = broker.get_position_qty("SPY", dry_run=dry_run)
+    state["spy_shares"] = actual_spy if not dry_run else state["spy_shares"]
     old_spy = state["spy_shares"]
     adjust_spy_sleeve(state, idle_now, spy_price)
     spy_delta = state["spy_shares"] - old_spy
@@ -191,6 +195,8 @@ def run_rebalance(dry_run: bool = False) -> None:
         if not dry_run:
             _log_trade(today_str, "SPY", side, spy_order_qty, spy_price, "spy_sleeve",
                        state["nav"], result.get("order_id", ""))
+        # Sync state to actual integer shares purchased/sold
+        state["spy_shares"] = old_spy + spy_order_qty if side == "buy" else max(0.0, old_spy - spy_order_qty)
 
     # ── Update state (skipped in dry-run — no real orders were placed) ──────
     state["last_rebalance"] = today_str
@@ -200,12 +206,13 @@ def run_rebalance(dry_run: bool = False) -> None:
         # ── Log rebalance summary ─────────────────────────────────────────
         spy_val = state["spy_shares"] * spy_price
         spy_pct = spy_val / state["nav"] if state["nav"] > 0 else 0.0
+        entries_executed = [t for t in entries_to_buy if t in state["holdings"]]
         _log_rebalance(
             today_str,
             len(state["holdings"]),
             state["nav"],
             spy_pct,
-            entries_to_buy,
+            entries_executed,
             [e["ticker"] for e in filter_exits],
             stop_tickers,
         )

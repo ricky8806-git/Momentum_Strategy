@@ -69,3 +69,24 @@ def get_account_nav(dry_run: bool = False) -> float:
     client = _get_client()
     account = client.get_account()
     return float(account.equity)
+
+
+def get_account_cash(dry_run: bool = False) -> float:
+    """Return current cash balance from Alpaca account."""
+    if dry_run:
+        return 0.0
+    client = _get_client()
+    account = client.get_account()
+    return float(account.cash)
+
+
+def get_position_qty(ticker: str, dry_run: bool = False) -> float:
+    """Return actual shares held for ticker; 0.0 if no position exists."""
+    if dry_run:
+        return 0.0
+    client = _get_client()
+    try:
+        pos = client.get_open_position(ticker)
+        return float(pos.qty)
+    except Exception:
+        return 0.0

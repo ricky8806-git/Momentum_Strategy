@@ -1,0 +1,82 @@
+{
+  "holdings": {
+    "COHR": {
+      "shares": 21.0,
+      "entry_price": 313.5,
+      "entry_date": "2026-04-16"
+    },
+    "SNDK": {
+      "shares": 7.0,
+      "entry_price": 929.864990234375,
+      "entry_date": "2026-04-16"
+    },
+    "MU": {
+      "shares": 14.0,
+      "entry_price": 457.6300048828125,
+      "entry_date": "2026-04-16"
+    },
+    "CIEN": {
+      "shares": 14.0,
+      "entry_price": 471.7799987792969,
+      "entry_date": "2026-04-16"
+    },
+    "WDC": {
+      "shares": 18.0,
+      "entry_price": 362.0,
+      "entry_date": "2026-04-16"
+    },
+    "STX": {
+      "shares": 12.0,
+      "entry_price": 520.8300170898438,
+      "entry_date": "2026-04-16"
+    },
+    "ON": {
+      "shares": 2.0,
+      "entry_price": 99.2300033569336,
+      "entry_date": "2026-04-27"
+    },
+    "GLW": {
+      "shares": 35.0,
+      "entry_price": 173.8300018310547,
+      "entry_date": "2026-05-20"
+    },
+    "AMD": {
+      "shares": 15.0,
+      "entry_price": 412.6000061035156,
+      "entry_date": "2026-05-20"
+    },
+    "TXN": {
+      "shares": 21.0,
+      "entry_price": 292.6099853515625,
+      "entry_date": "2026-05-20"
+    },
+    "DELL": {
+      "shares": 26.0,
+      "entry_price": 234.25,
+      "entry_date": "2026-05-20"
+    },
+    "INTC": {
+      "shares": 69.0,
+      "entry_price": 121.44999694824219,
+      "entry_date": "2026-05-29"
+    },
+    "HPE": {
+      "shares": 226.0,
+      "entry_price": 37.470001220703125,
+      "entry_date": "2026-05-29"
+    },
+    "FTNT": {
+      "shares": 66.0,
+      "entry_price": 128.5800018310547,
+      "entry_date": "2026-05-29"
+    },
+    "LRCX": {
+      "shares": 26.0,
+      "entry_price": 317.45001220703125,
+      "entry_date": "2026-05-29"
+    }
+  },
+  "spy_shares": 3.0,
+  "last_rebalance": "2026-05-29",
+  "nav": 127294.86
+}

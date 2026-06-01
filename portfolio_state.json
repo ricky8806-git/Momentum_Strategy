@@ -1,10 +1,5 @@
 {
   "holdings": {
-    "COHR": {
-      "shares": 21.0,
-      "entry_price": 313.5,
-      "entry_date": "2026-04-16"
-    },
     "SNDK": {
       "shares": 7.0,
       "entry_price": 929.864990234375,
@@ -35,30 +30,15 @@
       "entry_price": 99.2300033569336,
       "entry_date": "2026-04-27"
     },
-    "GLW": {
-      "shares": 35.0,
-      "entry_price": 173.8300018310547,
-      "entry_date": "2026-05-20"
-    },
     "AMD": {
       "shares": 15.0,
       "entry_price": 412.6000061035156,
-      "entry_date": "2026-05-20"
-    },
-    "TXN": {
-      "shares": 21.0,
-      "entry_price": 292.6099853515625,
       "entry_date": "2026-05-20"
     },
     "DELL": {
       "shares": 26.0,
       "entry_price": 234.25,
       "entry_date": "2026-05-20"
-    },
-    "INTC": {
-      "shares": 69.0,
-      "entry_price": 121.44999694824219,
-      "entry_date": "2026-05-29"
     },
     "HPE": {
       "shares": 226.0,
@@ -74,9 +54,29 @@
       "shares": 26.0,
       "entry_price": 317.45001220703125,
       "entry_date": "2026-05-29"
+    },
+    "TER": {
+      "shares": 17.0,
+      "entry_price": 385.1600036621094,
+      "entry_date": "2026-06-01"
+    },
+    "DDOG": {
+      "shares": 29.0,
+      "entry_price": 234.0,
+      "entry_date": "2026-06-01"
+    },
+    "NTAP": {
+      "shares": 38.0,
+      "entry_price": 176.69000244140625,
+      "entry_date": "2026-06-01"
+    },
+    "PANW": {
+      "shares": 26.0,
+      "entry_price": 256.32000732421875,
+      "entry_date": "2026-06-01"
     }
   },
-  "spy_shares": 3.0,
-  "last_rebalance": "2026-05-29",
-  "nav": 127294.86
+  "spy_shares": 0.8831984314312536,
+  "last_rebalance": "2026-06-01",
+  "nav": 132541.1
 }

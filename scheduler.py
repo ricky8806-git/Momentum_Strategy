@@ -91,6 +91,7 @@ def generate_report(
     entries: list[dict],
     exits: list[dict],
     held_tickers: list[str],
+    name_map: dict | None = None,
 ) -> None:
     """
     Write a markdown rebalance summary to report_path.
@@ -100,7 +101,13 @@ def generate_report(
     entries       : list of {ticker, shares, price}
     exits         : list of {ticker, shares, price, reason}
     held_tickers  : tickers carried over with no action this run
+    name_map      : optional {ticker: company_name} for display
     """
+    def _name(ticker: str) -> str:
+        if name_map is None:
+            return ""
+        return name_map.get(ticker, "")
+
     run_str   = pd.Timestamp.now().strftime("%Y-%m-%d")
     sig_str   = signal_day.strftime("%Y-%m-%d")
     n_pass    = len(eligible_pass)
@@ -131,8 +138,8 @@ def generate_report(
         f"5. Close ≥ {config.HIGH20_MIN_PCT:.0%} of 20-day high",
         "",
         f"## Selected Portfolio (Top {config.TOP_N} by momentum score)",
-        "| Rank | Ticker | Score | 6M Return | 3M Return | Action |",
-        "|------|--------|-------|-----------|-----------|--------|",
+        "| Rank | Ticker | Company | Score | 6M Return | 3M Return | Action |",
+        "|------|--------|---------|-------|-----------|-----------|--------|",
     ]
 
     for _, row in top_n.iterrows():
@@ -140,7 +147,7 @@ def generate_report(
         ret_l  = f"{row['ret_long']  * 100:+.1f}%" if pd.notna(row["ret_long"])  else "—"
         ret_s  = f"{row['ret_short'] * 100:+.1f}%" if pd.notna(row["ret_short"]) else "—"
         lines.append(
-            f"| {int(row['rank'])} | {row['ticker']} "
+            f"| {int(row['rank'])} | {row['ticker']} | {_name(row['ticker'])} "
             f"| {row['score']:.3f} | {ret_l} | {ret_s} | {action} |"
         )
 
@@ -149,12 +156,13 @@ def generate_report(
     if exits:
         lines += [
             "## Exits",
-            "| Ticker | Shares | Price | Reason |",
-            "|--------|--------|-------|--------|",
+            "| Ticker | Company | Shares | Price | Reason |",
+            "|--------|---------|--------|-------|--------|",
         ]
         for ex in exits:
             lines.append(
-                f"| {ex['ticker']} | {int(ex.get('shares', 0))} "
+                f"| {ex['ticker']} | {_name(ex['ticker'])} "
+                f"| {int(ex.get('shares', 0))} "
                 f"| ${float(ex.get('price', 0)):.2f} | {ex.get('reason', '')} |"
             )
     else:
@@ -164,13 +172,14 @@ def generate_report(
     if entries:
         lines += [
             "## Entries",
-            "| Ticker | Shares | Price | Est. Cost |",
-            "|--------|--------|-------|-----------|",
+            "| Ticker | Company | Shares | Price | Est. Cost |",
+            "|--------|---------|--------|-------|-----------|",
         ]
         for en in entries:
             cost = en.get("shares", 0) * en.get("price", 0)
             lines.append(
-                f"| {en['ticker']} | {int(en.get('shares', 0))} "
+                f"| {en['ticker']} | {_name(en['ticker'])} "
+                f"| {int(en.get('shares', 0))} "
                 f"| ${float(en.get('price', 0)):.2f} | ${cost:,.0f} |"
             )
     else:
@@ -213,6 +222,7 @@ def run_rebalance(dry_run: bool = False) -> None:
 
     # ── Fetch prices ──────────────────────────────────────────────────────
     symbols = data_loader.get_sp500_symbols()
+    name_map = data_loader.get_sp500_name_map()
     fetch_start = (today - pd.offsets.BDay(config.WARMUP_DAYS)).strftime("%Y-%m-%d")
     prices = data_loader.fetch_prices(symbols, fetch_start, today_str)
 
@@ -243,13 +253,22 @@ def run_rebalance(dry_run: bool = False) -> None:
             continue
         row = eligible[eligible["ticker"] == t]
         if row.empty or not bool(row.iloc[0]["passes_filter"]):
-            filter_exits.append({"ticker": t, "reason": "filter_exit",
+            if row.empty:
+                reason = "Not in universe / insufficient data"
+            else:
+                failures = str(row.iloc[0].get("filter_failures", ""))
+                reason = failures if failures else "filter_exit"
+            filter_exits.append({"ticker": t, "reason": reason,
                                   "price": open_today.get(t, 0.0)})
             continue
         rank_row = eligible_pass[eligible_pass["ticker"] == t]
         if rank_row.empty or int(rank_row.iloc[0]["rank"]) > config.EXIT_RANK_THRESHOLD:
-            filter_exits.append({"ticker": t, "reason": "rank_exit",
-                                  "price": open_today.get(t, 0.0)})
+            actual_rank = int(rank_row.iloc[0]["rank"]) if not rank_row.empty else "?"
+            filter_exits.append({
+                "ticker": t,
+                "reason": f"Ranked out (rank {actual_rank} > {config.EXIT_RANK_THRESHOLD})",
+                "price":  open_today.get(t, 0.0),
+            })
 
     # ── Execute exits (stop-loss first, then filter/rank) ─────────────────
     all_exits = stop_exits + filter_exits
@@ -348,6 +367,7 @@ def run_rebalance(dry_run: bool = False) -> None:
             entries=entries_detail,
             exits=all_exits,
             held_tickers=held_tickers_list,
+            name_map=name_map,
         )
     print(f"  Done. Holdings: {len(state['holdings'])}  NAV: ${state['nav']:,.2f}")
 

@@ -18,6 +18,19 @@ def get_sp500_symbols() -> list[str]:
     return symbols
 
 
+def get_sp500_name_map() -> dict[str, str]:
+    """
+    Return {ticker: company_name} from the S&P 500 constituents CSV.
+    Keys use '-' instead of '.' to match yfinance conventions.
+    SPY is added manually as a convenience.
+    """
+    df = pd.read_csv(config.SP500_URL)
+    df["Symbol"] = df["Symbol"].dropna().str.strip().str.upper().str.replace(".", "-", regex=False)
+    name_map = dict(zip(df["Symbol"], df["Security"]))
+    name_map["SPY"] = "SPDR S&P 500 ETF"
+    return name_map
+
+
 def fetch_prices(
     symbols: list[str],
     start: str,

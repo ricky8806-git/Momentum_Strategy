@@ -50,6 +50,31 @@ def apply_hard_filters(row: pd.Series) -> bool:
     return all(checks)
 
 
+def describe_filter_failures(row: pd.Series) -> str:
+    """
+    Return a semicolon-separated string naming each hard filter that failed.
+    Returns '' if all filters pass, or 'Insufficient data' if indicators are NaN.
+    """
+    if pd.isna([row["ma50"], row["ma100"], row["ma200"],
+                row["range_pos"], row["high20"]]).any():
+        return "Insufficient data"
+
+    checks = [
+        (row["close"] > row["ma100"],
+         "Close < 100-day MA"),
+        (row["close"] > row["ma200"],
+         "Close < 200-day MA"),
+        (row["ma50"]  > row["ma200"],
+         "50-day MA < 200-day MA (death cross)"),
+        (row["range_pos"] >= config.RANGE_POS_MIN,
+         f"Range pos < {config.RANGE_POS_MIN:.0%} of 20-day range"),
+        (row["close"] >= config.HIGH20_MIN_PCT * row["high20"],
+         f"Close < {config.HIGH20_MIN_PCT:.0%} of 20-day high"),
+    ]
+    failures = [label for ok, label in checks if not ok]
+    return "; ".join(failures)
+
+
 def compute_momentum_score(close: pd.Series) -> float:
     """
     Return 0.60 × 126d_return + 0.40 × 63d_return.
@@ -97,11 +122,12 @@ def get_eligible_tickers(
             ret_long  = float(series.iloc[-1] / series.iloc[-(config.MOM_WINDOW_LONG + 1)] - 1)
             ret_short = float(series.iloc[-1] / series.iloc[-(config.MOM_WINDOW_SHORT + 1)] - 1)
         results.append({
-            "ticker":        ticker,
-            "score":         score,
-            "passes_filter": passes,
-            "ret_long":      ret_long,
-            "ret_short":     ret_short,
+            "ticker":          ticker,
+            "score":           score,
+            "passes_filter":   passes,
+            "ret_long":        ret_long,
+            "ret_short":       ret_short,
+            "filter_failures": "" if passes else describe_filter_failures(last),
         })
     return pd.DataFrame(results)
 

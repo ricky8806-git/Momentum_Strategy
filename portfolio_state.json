@@ -1,69 +1,9 @@
 {
   "holdings": {
-    "SNDK": {
-      "shares": 7.0,
-      "entry_price": 929.864990234375,
-      "entry_date": "2026-04-16"
-    },
-    "MU": {
-      "shares": 14.0,
-      "entry_price": 457.6300048828125,
-      "entry_date": "2026-04-16"
-    },
-    "CIEN": {
-      "shares": 14.0,
-      "entry_price": 471.7799987792969,
-      "entry_date": "2026-04-16"
-    },
-    "WDC": {
-      "shares": 18.0,
-      "entry_price": 362.0,
-      "entry_date": "2026-04-16"
-    },
-    "STX": {
-      "shares": 12.0,
-      "entry_price": 520.8300170898438,
-      "entry_date": "2026-04-16"
-    },
-    "ON": {
-      "shares": 2.0,
-      "entry_price": 99.2300033569336,
-      "entry_date": "2026-04-27"
-    },
-    "AMD": {
-      "shares": 15.0,
-      "entry_price": 412.6000061035156,
-      "entry_date": "2026-05-20"
-    },
-    "DELL": {
-      "shares": 26.0,
-      "entry_price": 234.25,
-      "entry_date": "2026-05-20"
-    },
-    "HPE": {
-      "shares": 226.0,
-      "entry_price": 37.470001220703125,
-      "entry_date": "2026-05-29"
-    },
     "FTNT": {
       "shares": 66.0,
       "entry_price": 128.5800018310547,
       "entry_date": "2026-05-29"
-    },
-    "LRCX": {
-      "shares": 26.0,
-      "entry_price": 317.45001220703125,
-      "entry_date": "2026-05-29"
-    },
-    "TER": {
-      "shares": 17.0,
-      "entry_price": 385.1600036621094,
-      "entry_date": "2026-06-01"
-    },
-    "DDOG": {
-      "shares": 29.0,
-      "entry_price": 234.0,
-      "entry_date": "2026-06-01"
     },
     "NTAP": {
       "shares": 38.0,
@@ -74,9 +14,69 @@
       "shares": 26.0,
       "entry_price": 256.32000732421875,
       "entry_date": "2026-06-01"
+    },
+    "CNC": {
+      "shares": 99.0,
+      "entry_price": 62.650001525878906,
+      "entry_date": "2026-06-08"
+    },
+    "NUE": {
+      "shares": 24.0,
+      "entry_price": 260.04998779296875,
+      "entry_date": "2026-06-08"
+    },
+    "FFIV": {
+      "shares": 15.0,
+      "entry_price": 405.1400146484375,
+      "entry_date": "2026-06-08"
+    },
+    "FDX": {
+      "shares": 19.0,
+      "entry_price": 327.7300109863281,
+      "entry_date": "2026-06-08"
+    },
+    "STLD": {
+      "shares": 22.0,
+      "entry_price": 273.8900146484375,
+      "entry_date": "2026-06-08"
+    },
+    "JBHT": {
+      "shares": 21.0,
+      "entry_price": 285.3699951171875,
+      "entry_date": "2026-06-08"
+    },
+    "CSCO": {
+      "shares": 48.0,
+      "entry_price": 128.66000366210938,
+      "entry_date": "2026-06-08"
+    },
+    "HUM": {
+      "shares": 17.0,
+      "entry_price": 348.8399963378906,
+      "entry_date": "2026-06-08"
+    },
+    "HST": {
+      "shares": 255.0,
+      "entry_price": 24.469999313354492,
+      "entry_date": "2026-06-08"
+    },
+    "STT": {
+      "shares": 38.0,
+      "entry_price": 162.2899932861328,
+      "entry_date": "2026-06-08"
+    },
+    "EQIX": {
+      "shares": 5.0,
+      "entry_price": 1079.4200439453125,
+      "entry_date": "2026-06-08"
+    },
+    "ODFL": {
+      "shares": 25.0,
+      "entry_price": 245.52000427246094,
+      "entry_date": "2026-06-08"
     }
   },
-  "spy_shares": 0.0,
-  "last_rebalance": "2026-06-01",
-  "nav": 132990.44
+  "spy_shares": 2.0,
+  "last_rebalance": "2026-06-08",
+  "nav": 122123.57
 }

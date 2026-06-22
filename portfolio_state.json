@@ -20,11 +20,6 @@
       "entry_price": 260.04998779296875,
       "entry_date": "2026-06-08"
     },
-    "FFIV": {
-      "shares": 15.0,
-      "entry_price": 405.1400146484375,
-      "entry_date": "2026-06-08"
-    },
     "STLD": {
       "shares": 22.0,
       "entry_price": 273.8900146484375,
@@ -89,9 +84,14 @@
       "shares": 4.0,
       "entry_price": 971.8099975585938,
       "entry_date": "2026-06-15"
+    },
+    "FLEX": {
+      "shares": 23.0,
+      "entry_price": 147.02000427246094,
+      "entry_date": "2026-06-22"
     }
   },
-  "spy_shares": 2.5501472589183063,
-  "last_rebalance": "2026-06-15",
-  "nav": 124323.6
+  "spy_shares": 1.0,
+  "last_rebalance": "2026-06-22",
+  "nav": 125218.79
 }

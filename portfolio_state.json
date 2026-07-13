@@ -5,11 +5,6 @@
       "entry_price": 128.5800018310547,
       "entry_date": "2026-05-29"
     },
-    "PANW": {
-      "shares": 26.0,
-      "entry_price": 256.32000732421875,
-      "entry_date": "2026-06-01"
-    },
     "CNC": {
       "shares": 99.0,
       "entry_price": 62.650001525878906,
@@ -20,63 +15,68 @@
       "entry_price": 348.8399963378906,
       "entry_date": "2026-06-08"
     },
-    "AMAT": {
-      "shares": 7.0,
-      "entry_price": 548.6199951171875,
-      "entry_date": "2026-06-15"
-    },
-    "INTC": {
-      "shares": 34.0,
-      "entry_price": 117.41999816894531,
-      "entry_date": "2026-06-15"
-    },
     "AMD": {
       "shares": 8.0,
       "entry_price": 499.69000244140625,
       "entry_date": "2026-06-15"
     },
-    "KLAC": {
-      "shares": 16.0,
-      "entry_price": 237.60000610351562,
-      "entry_date": "2026-06-15"
+    "MPC": {
+      "shares": 23.0,
+      "entry_price": 286.32000732421875,
+      "entry_date": "2026-07-13"
     },
-    "LRCX": {
-      "shares": 11.0,
-      "entry_price": 359.3900146484375,
-      "entry_date": "2026-06-15"
+    "FFIV": {
+      "shares": 15.0,
+      "entry_price": 427.7900085449219,
+      "entry_date": "2026-07-13"
     },
-    "TER": {
-      "shares": 10.0,
-      "entry_price": 381.94000244140625,
-      "entry_date": "2026-06-15"
+    "DELL": {
+      "shares": 14.0,
+      "entry_price": 449.1099853515625,
+      "entry_date": "2026-07-13"
     },
-    "MU": {
-      "shares": 4.0,
-      "entry_price": 971.8099975585938,
-      "entry_date": "2026-06-15"
+    "NTAP": {
+      "shares": 39.0,
+      "entry_price": 170.9199981689453,
+      "entry_date": "2026-07-13"
     },
-    "HON": {
-      "shares": 18.0,
-      "entry_price": 459.05999755859375,
-      "entry_date": "2026-06-29"
+    "GEV": {
+      "shares": 6.0,
+      "entry_price": 1077.0,
+      "entry_date": "2026-07-13"
     },
-    "GLW": {
-      "shares": 37.0,
-      "entry_price": 224.42999267578125,
-      "entry_date": "2026-06-29"
+    "CSCO": {
+      "shares": 56.0,
+      "entry_price": 117.62999725341797,
+      "entry_date": "2026-07-13"
     },
-    "MRNA": {
-      "shares": 142.0,
-      "entry_price": 59.46500015258789,
-      "entry_date": "2026-06-29"
+    "TRGP": {
+      "shares": 24.0,
+      "entry_price": 273.5,
+      "entry_date": "2026-07-13"
     },
-    "GNRC": {
+    "DVA": {
       "shares": 29.0,
-      "entry_price": 285.9700012207031,
-      "entry_date": "2026-06-29"
+      "entry_price": 230.91000366210938,
+      "entry_date": "2026-07-13"
+    },
+    "VLO": {
+      "shares": 23.0,
+      "entry_price": 282.9800109863281,
+      "entry_date": "2026-07-13"
+    },
+    "DDOG": {
+      "shares": 24.0,
+      "entry_price": 270.4100036621094,
+      "entry_date": "2026-07-13"
+    },
+    "HPE": {
+      "shares": 136.0,
+      "entry_price": 49.029998779296875,
+      "entry_date": "2026-07-13"
     }
   },
-  "spy_shares": 0.731806809311173,
-  "last_rebalance": "2026-06-29",
-  "nav": 127728.23
+  "spy_shares": 2.0,
+  "last_rebalance": "2026-07-13",
+  "nav": 118967.18
 }

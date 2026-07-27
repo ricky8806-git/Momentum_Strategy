@@ -1,20 +1,5 @@
 {
   "holdings": {
-    "FTNT": {
-      "shares": 66.0,
-      "entry_price": 128.5800018310547,
-      "entry_date": "2026-05-29"
-    },
-    "CNC": {
-      "shares": 99.0,
-      "entry_price": 62.650001525878906,
-      "entry_date": "2026-06-08"
-    },
-    "HUM": {
-      "shares": 17.0,
-      "entry_price": 348.8399963378906,
-      "entry_date": "2026-06-08"
-    },
     "MPC": {
       "shares": 23.0,
       "entry_price": 286.32000732421875,
@@ -35,16 +20,6 @@
       "entry_price": 282.9800109863281,
       "entry_date": "2026-07-13"
     },
-    "DDOG": {
-      "shares": 24.0,
-      "entry_price": 270.4100036621094,
-      "entry_date": "2026-07-13"
-    },
-    "CRWD": {
-      "shares": 27.0,
-      "entry_price": 200.39999389648438,
-      "entry_date": "2026-07-20"
-    },
     "DOC": {
       "shares": 243.0,
       "entry_price": 22.399999618530273,
@@ -60,23 +35,48 @@
       "entry_price": 205.6199951171875,
       "entry_date": "2026-07-20"
     },
-    "JBHT": {
-      "shares": 18.0,
-      "entry_price": 296.3900146484375,
-      "entry_date": "2026-07-20"
-    },
     "STT": {
       "shares": 30.0,
       "entry_price": 181.41000366210938,
       "entry_date": "2026-07-20"
     },
-    "PANW": {
+    "NTAP": {
+      "shares": 40.0,
+      "entry_price": 163.44000244140625,
+      "entry_date": "2026-07-27"
+    },
+    "TRV": {
+      "shares": 17.0,
+      "entry_price": 378.5299987792969,
+      "entry_date": "2026-07-27"
+    },
+    "DELL": {
       "shares": 15.0,
-      "entry_price": 347.0,
-      "entry_date": "2026-07-20"
+      "entry_price": 438.94000244140625,
+      "entry_date": "2026-07-27"
+    },
+    "WELL": {
+      "shares": 26.0,
+      "entry_price": 248.47999572753906,
+      "entry_date": "2026-07-27"
+    },
+    "CSX": {
+      "shares": 126.0,
+      "entry_price": 52.77000045776367,
+      "entry_date": "2026-07-27"
+    },
+    "BBY": {
+      "shares": 79.0,
+      "entry_price": 83.8499984741211,
+      "entry_date": "2026-07-27"
+    },
+    "HPE": {
+      "shares": 139.0,
+      "entry_price": 48.0,
+      "entry_date": "2026-07-27"
     }
   },
-  "spy_shares": 1.0,
-  "last_rebalance": "2026-07-20",
-  "nav": 120874.84
+  "spy_shares": 1.2137274222570624,
+  "last_rebalance": "2026-07-27",
+  "nav": 117055.9
 }

@@ -5,11 +5,6 @@
       "entry_price": 286.32000732421875,
       "entry_date": "2026-07-13"
     },
-    "TRGP": {
-      "shares": 24.0,
-      "entry_price": 273.5,
-      "entry_date": "2026-07-13"
-    },
     "DVA": {
       "shares": 29.0,
       "entry_price": 230.91000366210938,
@@ -19,16 +14,6 @@
       "shares": 23.0,
       "entry_price": 282.9800109863281,
       "entry_date": "2026-07-13"
-    },
-    "DOC": {
-      "shares": 243.0,
-      "entry_price": 22.399999618530273,
-      "entry_date": "2026-07-20"
-    },
-    "CVS": {
-      "shares": 50.0,
-      "entry_price": 107.36000061035156,
-      "entry_date": "2026-07-20"
     },
     "PSX": {
       "shares": 26.0,
@@ -50,21 +35,6 @@
       "entry_price": 378.5299987792969,
       "entry_date": "2026-07-27"
     },
-    "DELL": {
-      "shares": 15.0,
-      "entry_price": 438.94000244140625,
-      "entry_date": "2026-07-27"
-    },
-    "WELL": {
-      "shares": 26.0,
-      "entry_price": 248.47999572753906,
-      "entry_date": "2026-07-27"
-    },
-    "CSX": {
-      "shares": 126.0,
-      "entry_price": 52.77000045776367,
-      "entry_date": "2026-07-27"
-    },
     "BBY": {
       "shares": 79.0,
       "entry_price": 83.8499984741211,
@@ -74,9 +44,49 @@
       "shares": 139.0,
       "entry_price": 48.0,
       "entry_date": "2026-07-27"
+    },
+    "HPQ": {
+      "shares": 169.0,
+      "entry_price": 26.5,
+      "entry_date": "2026-08-03"
+    },
+    "STX": {
+      "shares": 4.0,
+      "entry_price": 901.6799926757812,
+      "entry_date": "2026-08-03"
+    },
+    "GRMN": {
+      "shares": 15.0,
+      "entry_price": 295.6600036621094,
+      "entry_date": "2026-08-03"
+    },
+    "WDC": {
+      "shares": 7.0,
+      "entry_price": 569.1099853515625,
+      "entry_date": "2026-08-03"
+    },
+    "FTNT": {
+      "shares": 29.0,
+      "entry_price": 154.00999450683594,
+      "entry_date": "2026-08-03"
+    },
+    "HST": {
+      "shares": 177.0,
+      "entry_price": 25.329999923706055,
+      "entry_date": "2026-08-03"
+    },
+    "BAX": {
+      "shares": 167.0,
+      "entry_price": 26.920000076293945,
+      "entry_date": "2026-08-03"
+    },
+    "DDOG": {
+      "shares": 16.0,
+      "entry_price": 271.5,
+      "entry_date": "2026-08-03"
     }
   },
-  "spy_shares": 1.2137274222570624,
-  "last_rebalance": "2026-07-27",
-  "nav": 117055.9
+  "spy_shares": 2.0,
+  "last_rebalance": "2026-08-03",
+  "nav": 117896.89
 }

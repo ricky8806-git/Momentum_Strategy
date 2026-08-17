@@ -1,10 +1,5 @@
 {
   "holdings": {
-    "STT": {
-      "shares": 30.0,
-      "entry_price": 181.41000366210938,
-      "entry_date": "2026-07-20"
-    },
     "NTAP": {
       "shares": 40.0,
       "entry_price": 163.44000244140625,
@@ -40,16 +35,6 @@
       "entry_price": 365.5,
       "entry_date": "2026-08-10"
     },
-    "ZBRA": {
-      "shares": 14.0,
-      "entry_price": 368.2900085449219,
-      "entry_date": "2026-08-10"
-    },
-    "COHR": {
-      "shares": 14.0,
-      "entry_price": 360.0199890136719,
-      "entry_date": "2026-08-10"
-    },
     "DELL": {
       "shares": 11.0,
       "entry_price": 444.95001220703125,
@@ -58,21 +43,6 @@
     "CRL": {
       "shares": 19.0,
       "entry_price": 261.5299987792969,
-      "entry_date": "2026-08-10"
-    },
-    "LITE": {
-      "shares": 5.0,
-      "entry_price": 870.0,
-      "entry_date": "2026-08-10"
-    },
-    "CSCO": {
-      "shares": 42.0,
-      "entry_price": 121.87999725341797,
-      "entry_date": "2026-08-10"
-    },
-    "ANET": {
-      "shares": 26.0,
-      "entry_price": 198.0,
       "entry_date": "2026-08-10"
     },
     "MRVL": {
@@ -84,9 +54,39 @@
       "shares": 50.0,
       "entry_price": 102.33000183105469,
       "entry_date": "2026-08-10"
+    },
+    "VLO": {
+      "shares": 16.0,
+      "entry_price": 342.9200134277344,
+      "entry_date": "2026-08-17"
+    },
+    "AMD": {
+      "shares": 11.0,
+      "entry_price": 487.6000061035156,
+      "entry_date": "2026-08-17"
+    },
+    "MPC": {
+      "shares": 15.0,
+      "entry_price": 356.989990234375,
+      "entry_date": "2026-08-17"
+    },
+    "SNDK": {
+      "shares": 3.0,
+      "entry_price": 1646.9300537109375,
+      "entry_date": "2026-08-17"
+    },
+    "STX": {
+      "shares": 5.0,
+      "entry_price": 941.260009765625,
+      "entry_date": "2026-08-17"
+    },
+    "MU": {
+      "shares": 5.0,
+      "entry_price": 979.3200073242188,
+      "entry_date": "2026-08-17"
     }
   },
-  "spy_shares": 2.446188149679012,
-  "last_rebalance": "2026-08-10",
-  "nav": 115839.24
+  "spy_shares": 2.884007222240209,
+  "last_rebalance": "2026-08-17",
+  "nav": 118539.12
 }

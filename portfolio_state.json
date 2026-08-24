@@ -1,44 +1,9 @@
 {
   "holdings": {
-    "NTAP": {
-      "shares": 40.0,
-      "entry_price": 163.44000244140625,
-      "entry_date": "2026-07-27"
-    },
-    "HPE": {
-      "shares": 139.0,
-      "entry_price": 48.0,
-      "entry_date": "2026-07-27"
-    },
     "HPQ": {
       "shares": 169.0,
       "entry_price": 26.5,
       "entry_date": "2026-08-03"
-    },
-    "GRMN": {
-      "shares": 15.0,
-      "entry_price": 295.6600036621094,
-      "entry_date": "2026-08-03"
-    },
-    "BAX": {
-      "shares": 167.0,
-      "entry_price": 26.920000076293945,
-      "entry_date": "2026-08-03"
-    },
-    "CRWD": {
-      "shares": 24.0,
-      "entry_price": 213.8249969482422,
-      "entry_date": "2026-08-10"
-    },
-    "PANW": {
-      "shares": 14.0,
-      "entry_price": 365.5,
-      "entry_date": "2026-08-10"
-    },
-    "DELL": {
-      "shares": 11.0,
-      "entry_price": 444.95001220703125,
-      "entry_date": "2026-08-10"
     },
     "CRL": {
       "shares": 19.0,
@@ -50,19 +15,9 @@
       "entry_price": 219.0500030517578,
       "entry_date": "2026-08-10"
     },
-    "INTC": {
-      "shares": 50.0,
-      "entry_price": 102.33000183105469,
-      "entry_date": "2026-08-10"
-    },
     "VLO": {
       "shares": 16.0,
       "entry_price": 342.9200134277344,
-      "entry_date": "2026-08-17"
-    },
-    "AMD": {
-      "shares": 11.0,
-      "entry_price": 487.6000061035156,
       "entry_date": "2026-08-17"
     },
     "MPC": {
@@ -70,23 +25,58 @@
       "entry_price": 356.989990234375,
       "entry_date": "2026-08-17"
     },
-    "SNDK": {
-      "shares": 3.0,
-      "entry_price": 1646.9300537109375,
-      "entry_date": "2026-08-17"
-    },
-    "STX": {
-      "shares": 5.0,
-      "entry_price": 941.260009765625,
-      "entry_date": "2026-08-17"
-    },
     "MU": {
       "shares": 5.0,
       "entry_price": 979.3200073242188,
       "entry_date": "2026-08-17"
+    },
+    "HOOD": {
+      "shares": 64.0,
+      "entry_price": 101.0999984741211,
+      "entry_date": "2026-08-24"
+    },
+    "EXPE": {
+      "shares": 19.0,
+      "entry_price": 328.45001220703125,
+      "entry_date": "2026-08-24"
+    },
+    "PSX": {
+      "shares": 27.0,
+      "entry_price": 240.27999877929688,
+      "entry_date": "2026-08-24"
+    },
+    "ZBRA": {
+      "shares": 18.0,
+      "entry_price": 361.2699890136719,
+      "entry_date": "2026-08-24"
+    },
+    "ABNB": {
+      "shares": 34.0,
+      "entry_price": 187.13999938964844,
+      "entry_date": "2026-08-24"
+    },
+    "IQV": {
+      "shares": 25.0,
+      "entry_price": 256.7900085449219,
+      "entry_date": "2026-08-24"
+    },
+    "FDS": {
+      "shares": 21.0,
+      "entry_price": 298.57000732421875,
+      "entry_date": "2026-08-24"
+    },
+    "AXON": {
+      "shares": 10.0,
+      "entry_price": 623.8599853515625,
+      "entry_date": "2026-08-24"
+    },
+    "PYPL": {
+      "shares": 104.0,
+      "entry_price": 62.290000915527344,
+      "entry_date": "2026-08-24"
     }
   },
-  "spy_shares": 2.884007222240209,
-  "last_rebalance": "2026-08-17",
-  "nav": 118539.12
+  "spy_shares": 1.6725866659594157,
+  "last_rebalance": "2026-08-24",
+  "nav": 109209.15
 }

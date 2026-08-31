@@ -233,3 +233,19 @@ date,ticker,action,shares,price,reason,nav_after,order_id
 2026-08-24,FDS,buy,21.0,298.57000732421875,entry,109298.78,d9b4163d-0a6b-4785-9016-bbecaa58b19a
 2026-08-24,AXON,buy,10.0,623.8599853515625,entry,109298.78,f0af6c1d-7110-461c-946c-83e406532758
 2026-08-24,PYPL,buy,104.0,62.290000915527344,entry,109298.78,908bef1e-e846-4a56-8a1e-29038e7a6c97
+2026-08-31,HPQ,sell,169.0,nan,Not in universe / insufficient data,109056.7,647a49a7-6b0a-4e50-9113-07e67b37c9f8
+2026-08-31,CRL,sell,19.0,nan,Not in universe / insufficient data,109056.7,63e3e769-63d6-4f01-96a5-46b32bed7eb6
+2026-08-31,MRVL,sell,23.0,nan,Not in universe / insufficient data,109056.7,95e00a49-da62-47e7-8eb0-6f7e42a6e121
+2026-08-31,VLO,sell,16.0,nan,Not in universe / insufficient data,109056.7,e0473e36-597d-4542-8d89-37779f761af8
+2026-08-31,MPC,sell,15.0,nan,Not in universe / insufficient data,109056.7,2fae640f-b10b-4c54-964b-37324709831f
+2026-08-31,MU,sell,5.0,nan,Not in universe / insufficient data,109056.7,2a27ef49-3bd8-4639-a59e-5a8eee282740
+2026-08-31,HOOD,sell,64.0,nan,Not in universe / insufficient data,109056.7,9fa9ccdc-48fa-4005-8477-7bef034cf02d
+2026-08-31,EXPE,sell,19.0,nan,Not in universe / insufficient data,109056.7,f072b78e-cb5a-4f80-a687-897661f7a9d7
+2026-08-31,PSX,sell,27.0,nan,Not in universe / insufficient data,109056.7,4cfcf27c-7985-4755-806a-01b5a27aca8a
+2026-08-31,ZBRA,sell,18.0,nan,Not in universe / insufficient data,109056.7,bfe73965-28dd-4098-b5bf-17035577708c
+2026-08-31,ABNB,sell,34.0,nan,Not in universe / insufficient data,109056.7,2526f7b6-1962-48c4-b154-08a876daf29e
+2026-08-31,IQV,sell,25.0,nan,Not in universe / insufficient data,109056.7,f59b93be-20b2-43d1-9671-8dadf845d5fe
+2026-08-31,FDS,sell,21.0,nan,Not in universe / insufficient data,109056.7,ddb92e46-c21f-497f-9b19-65c458d16c71
+2026-08-31,AXON,sell,10.0,nan,Not in universe / insufficient data,109056.7,ec73e61a-cd3f-4cb1-ab00-7f2bfcbd9838
+2026-08-31,PYPL,sell,104.0,nan,Not in universe / insufficient data,109056.7,ad5c1be4-fae9-4cdf-906d-4e7654735114
+2026-08-31,SPY,sell,2,nan,spy_sleeve,109056.7,bb2507d1-6d32-4470-9bd5-4042e5d230f7

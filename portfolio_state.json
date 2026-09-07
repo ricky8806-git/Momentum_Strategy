@@ -1,6 +1,82 @@
 {
-  "holdings": {},
-  "spy_shares": 0.0,
-  "last_rebalance": "2026-08-31",
-  "nav": 109045.03
+  "holdings": {
+    "VEEV": {
+      "shares": 20.0,
+      "entry_price": 279.55999755859375,
+      "entry_date": "2026-09-07"
+    },
+    "MPC": {
+      "shares": 15.0,
+      "entry_price": 386.1000061035156,
+      "entry_date": "2026-09-07"
+    },
+    "SNDK": {
+      "shares": 3.0,
+      "entry_price": 1586.0,
+      "entry_date": "2026-09-07"
+    },
+    "DELL": {
+      "shares": 11.0,
+      "entry_price": 513.780029296875,
+      "entry_date": "2026-09-07"
+    },
+    "MU": {
+      "shares": 5.0,
+      "entry_price": 971.3400268554688,
+      "entry_date": "2026-09-07"
+    },
+    "HPQ": {
+      "shares": 181.0,
+      "entry_price": 31.950000762939453,
+      "entry_date": "2026-09-07"
+    },
+    "RVTY": {
+      "shares": 44.0,
+      "entry_price": 130.02999877929688,
+      "entry_date": "2026-09-07"
+    },
+    "PSX": {
+      "shares": 23.0,
+      "entry_price": 251.77999877929688,
+      "entry_date": "2026-09-07"
+    },
+    "HUM": {
+      "shares": 14.0,
+      "entry_price": 404.3399963378906,
+      "entry_date": "2026-09-07"
+    },
+    "IQV": {
+      "shares": 21.0,
+      "entry_price": 268.4800109863281,
+      "entry_date": "2026-09-07"
+    },
+    "VLO": {
+      "shares": 15.0,
+      "entry_price": 368.5,
+      "entry_date": "2026-09-07"
+    },
+    "STT": {
+      "shares": 30.0,
+      "entry_price": 192.1300048828125,
+      "entry_date": "2026-09-07"
+    },
+    "TECH": {
+      "shares": 80.0,
+      "entry_price": 72.4000015258789,
+      "entry_date": "2026-09-07"
+    },
+    "TGT": {
+      "shares": 35.0,
+      "entry_price": 163.6199951171875,
+      "entry_date": "2026-09-07"
+    },
+    "HOOD": {
+      "shares": 48.0,
+      "entry_price": 120.4749984741211,
+      "entry_date": "2026-09-07"
+    }
+  },
+  "spy_shares": 4.0,
+  "last_rebalance": "2026-09-07",
+  "nav": 106440.47
 }

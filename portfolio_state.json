@@ -1,18 +1,8 @@
 {
   "holdings": {
-    "VEEV": {
-      "shares": 20.0,
-      "entry_price": 279.55999755859375,
-      "entry_date": "2026-09-07"
-    },
     "MPC": {
       "shares": 15.0,
       "entry_price": 386.1000061035156,
-      "entry_date": "2026-09-07"
-    },
-    "SNDK": {
-      "shares": 3.0,
-      "entry_price": 1586.0,
       "entry_date": "2026-09-07"
     },
     "DELL": {
@@ -20,19 +10,9 @@
       "entry_price": 513.780029296875,
       "entry_date": "2026-09-07"
     },
-    "MU": {
-      "shares": 5.0,
-      "entry_price": 971.3400268554688,
-      "entry_date": "2026-09-07"
-    },
     "HPQ": {
       "shares": 181.0,
       "entry_price": 31.950000762939453,
-      "entry_date": "2026-09-07"
-    },
-    "RVTY": {
-      "shares": 44.0,
-      "entry_price": 130.02999877929688,
       "entry_date": "2026-09-07"
     },
     "PSX": {
@@ -60,23 +40,43 @@
       "entry_price": 192.1300048828125,
       "entry_date": "2026-09-07"
     },
-    "TECH": {
-      "shares": 80.0,
-      "entry_price": 72.4000015258789,
-      "entry_date": "2026-09-07"
+    "HPE": {
+      "shares": 92.0,
+      "entry_price": 56.369998931884766,
+      "entry_date": "2026-09-14"
     },
-    "TGT": {
-      "shares": 35.0,
-      "entry_price": 163.6199951171875,
-      "entry_date": "2026-09-07"
+    "SWKS": {
+      "shares": 61.0,
+      "entry_price": 84.2699966430664,
+      "entry_date": "2026-09-14"
     },
-    "HOOD": {
-      "shares": 48.0,
-      "entry_price": 120.4749984741211,
-      "entry_date": "2026-09-07"
+    "NTAP": {
+      "shares": 28.0,
+      "entry_price": 185.42999267578125,
+      "entry_date": "2026-09-14"
+    },
+    "AMD": {
+      "shares": 10.0,
+      "entry_price": 510.7099914550781,
+      "entry_date": "2026-09-14"
+    },
+    "MRVL": {
+      "shares": 22.0,
+      "entry_price": 234.6300048828125,
+      "entry_date": "2026-09-14"
+    },
+    "ANET": {
+      "shares": 27.0,
+      "entry_price": 192.22999572753906,
+      "entry_date": "2026-09-14"
+    },
+    "GEN": {
+      "shares": 172.0,
+      "entry_price": 30.06999969482422,
+      "entry_date": "2026-09-14"
     }
   },
-  "spy_shares": 4.0,
-  "last_rebalance": "2026-09-07",
-  "nav": 106440.47
+  "spy_shares": 1.0,
+  "last_rebalance": "2026-09-14",
+  "nav": 107442.79
 }

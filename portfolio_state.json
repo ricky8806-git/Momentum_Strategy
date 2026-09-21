@@ -20,24 +20,9 @@
       "entry_price": 251.77999877929688,
       "entry_date": "2026-09-07"
     },
-    "HUM": {
-      "shares": 14.0,
-      "entry_price": 404.3399963378906,
-      "entry_date": "2026-09-07"
-    },
-    "IQV": {
-      "shares": 21.0,
-      "entry_price": 268.4800109863281,
-      "entry_date": "2026-09-07"
-    },
     "VLO": {
       "shares": 15.0,
       "entry_price": 368.5,
-      "entry_date": "2026-09-07"
-    },
-    "STT": {
-      "shares": 30.0,
-      "entry_price": 192.1300048828125,
       "entry_date": "2026-09-07"
     },
     "HPE": {
@@ -65,18 +50,43 @@
       "entry_price": 234.6300048828125,
       "entry_date": "2026-09-14"
     },
-    "ANET": {
-      "shares": 27.0,
-      "entry_price": 192.22999572753906,
-      "entry_date": "2026-09-14"
+    "ILMN": {
+      "shares": 17.0,
+      "entry_price": 249.1300048828125,
+      "entry_date": "2026-09-21"
     },
-    "GEN": {
-      "shares": 172.0,
-      "entry_price": 30.06999969482422,
-      "entry_date": "2026-09-14"
+    "MU": {
+      "shares": 4.0,
+      "entry_price": 984.719970703125,
+      "entry_date": "2026-09-21"
+    },
+    "MRNA": {
+      "shares": 26.0,
+      "entry_price": 158.35499572753906,
+      "entry_date": "2026-09-21"
+    },
+    "CRWD": {
+      "shares": 17.0,
+      "entry_price": 246.97999572753906,
+      "entry_date": "2026-09-21"
+    },
+    "INTC": {
+      "shares": 38.0,
+      "entry_price": 109.80000305175781,
+      "entry_date": "2026-09-21"
+    },
+    "SNDK": {
+      "shares": 2.0,
+      "entry_price": 1625.199951171875,
+      "entry_date": "2026-09-21"
+    },
+    "FTNT": {
+      "shares": 24.0,
+      "entry_price": 172.4600067138672,
+      "entry_date": "2026-09-21"
     }
   },
-  "spy_shares": 1.0,
-  "last_rebalance": "2026-09-14",
-  "nav": 107442.79
+  "spy_shares": 2.0,
+  "last_rebalance": "2026-09-21",
+  "nav": 110740.27
 }

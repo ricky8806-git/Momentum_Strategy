@@ -1,38 +1,13 @@
 {
   "holdings": {
-    "MPC": {
-      "shares": 15.0,
-      "entry_price": 386.1000061035156,
-      "entry_date": "2026-09-07"
-    },
     "DELL": {
       "shares": 11.0,
       "entry_price": 513.780029296875,
       "entry_date": "2026-09-07"
     },
-    "HPQ": {
-      "shares": 181.0,
-      "entry_price": 31.950000762939453,
-      "entry_date": "2026-09-07"
-    },
-    "PSX": {
-      "shares": 23.0,
-      "entry_price": 251.77999877929688,
-      "entry_date": "2026-09-07"
-    },
-    "VLO": {
-      "shares": 15.0,
-      "entry_price": 368.5,
-      "entry_date": "2026-09-07"
-    },
     "HPE": {
       "shares": 92.0,
       "entry_price": 56.369998931884766,
-      "entry_date": "2026-09-14"
-    },
-    "SWKS": {
-      "shares": 61.0,
-      "entry_price": 84.2699966430664,
       "entry_date": "2026-09-14"
     },
     "NTAP": {
@@ -84,9 +59,34 @@
       "shares": 24.0,
       "entry_price": 172.4600067138672,
       "entry_date": "2026-09-21"
+    },
+    "HUM": {
+      "shares": 14.0,
+      "entry_price": 389.70001220703125,
+      "entry_date": "2026-09-28"
+    },
+    "P": {
+      "shares": 45.0,
+      "entry_price": 122.87999725341797,
+      "entry_date": "2026-09-28"
+    },
+    "PANW": {
+      "shares": 14.0,
+      "entry_price": 387.94000244140625,
+      "entry_date": "2026-09-28"
+    },
+    "BE": {
+      "shares": 20.0,
+      "entry_price": 269.9100036621094,
+      "entry_date": "2026-09-28"
+    },
+    "STX": {
+      "shares": 6.0,
+      "entry_price": 924.3599853515625,
+      "entry_date": "2026-09-28"
     }
   },
-  "spy_shares": 2.0,
-  "last_rebalance": "2026-09-21",
-  "nav": 110740.27
+  "spy_shares": 1.0,
+  "last_rebalance": "2026-09-28",
+  "nav": 112567.68
 }

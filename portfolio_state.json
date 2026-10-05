@@ -50,20 +50,10 @@
       "entry_price": 109.80000305175781,
       "entry_date": "2026-09-21"
     },
-    "SNDK": {
-      "shares": 2.0,
-      "entry_price": 1625.199951171875,
-      "entry_date": "2026-09-21"
-    },
     "FTNT": {
       "shares": 24.0,
       "entry_price": 172.4600067138672,
       "entry_date": "2026-09-21"
-    },
-    "HUM": {
-      "shares": 14.0,
-      "entry_price": 389.70001220703125,
-      "entry_date": "2026-09-28"
     },
     "P": {
       "shares": 45.0,
@@ -80,13 +70,18 @@
       "entry_price": 269.9100036621094,
       "entry_date": "2026-09-28"
     },
-    "STX": {
-      "shares": 6.0,
-      "entry_price": 924.3599853515625,
-      "entry_date": "2026-09-28"
+    "SMCI": {
+      "shares": 164.0,
+      "entry_price": 42.779998779296875,
+      "entry_date": "2026-10-05"
+    },
+    "DDOG": {
+      "shares": 25.0,
+      "entry_price": 280.30999755859375,
+      "entry_date": "2026-10-05"
     }
   },
-  "spy_shares": 1.0,
-  "last_rebalance": "2026-09-28",
-  "nav": 112567.68
+  "spy_shares": 0.07513866848504276,
+  "last_rebalance": "2026-10-05",
+  "nav": 117460.24
 }

@@ -30,11 +30,6 @@
       "entry_price": 249.1300048828125,
       "entry_date": "2026-09-21"
     },
-    "MU": {
-      "shares": 4.0,
-      "entry_price": 984.719970703125,
-      "entry_date": "2026-09-21"
-    },
     "MRNA": {
       "shares": 26.0,
       "entry_price": 158.35499572753906,
@@ -43,11 +38,6 @@
     "CRWD": {
       "shares": 17.0,
       "entry_price": 246.97999572753906,
-      "entry_date": "2026-09-21"
-    },
-    "INTC": {
-      "shares": 38.0,
-      "entry_price": 109.80000305175781,
       "entry_date": "2026-09-21"
     },
     "FTNT": {
@@ -65,11 +55,6 @@
       "entry_price": 387.94000244140625,
       "entry_date": "2026-09-28"
     },
-    "BE": {
-      "shares": 20.0,
-      "entry_price": 269.9100036621094,
-      "entry_date": "2026-09-28"
-    },
     "SMCI": {
       "shares": 164.0,
       "entry_price": 42.779998779296875,
@@ -79,9 +64,24 @@
       "shares": 25.0,
       "entry_price": 280.30999755859375,
       "entry_date": "2026-10-05"
+    },
+    "MPC": {
+      "shares": 10.0,
+      "entry_price": 461.0400085449219,
+      "entry_date": "2026-10-12"
+    },
+    "TWLO": {
+      "shares": 16.0,
+      "entry_price": 277.67999267578125,
+      "entry_date": "2026-10-12"
+    },
+    "HUM": {
+      "shares": 10.0,
+      "entry_price": 450.489990234375,
+      "entry_date": "2026-10-12"
     }
   },
-  "spy_shares": 0.07513866848504276,
-  "last_rebalance": "2026-10-05",
-  "nav": 117460.24
+  "spy_shares": 0.49010679894410325,
+  "last_rebalance": "2026-10-12",
+  "nav": 116247.88
 }

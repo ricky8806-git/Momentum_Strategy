@@ -1,87 +1,82 @@
 {
   "holdings": {
-    "DELL": {
-      "shares": 11.0,
-      "entry_price": 513.780029296875,
-      "entry_date": "2026-09-07"
-    },
-    "HPE": {
-      "shares": 92.0,
-      "entry_price": 56.369998931884766,
-      "entry_date": "2026-09-14"
-    },
-    "NTAP": {
-      "shares": 28.0,
-      "entry_price": 185.42999267578125,
-      "entry_date": "2026-09-14"
-    },
-    "AMD": {
-      "shares": 10.0,
-      "entry_price": 510.7099914550781,
-      "entry_date": "2026-09-14"
-    },
-    "MRVL": {
-      "shares": 22.0,
-      "entry_price": 234.6300048828125,
-      "entry_date": "2026-09-14"
-    },
-    "ILMN": {
-      "shares": 17.0,
-      "entry_price": 249.1300048828125,
-      "entry_date": "2026-09-21"
-    },
     "MRNA": {
       "shares": 26.0,
       "entry_price": 158.35499572753906,
       "entry_date": "2026-09-21"
-    },
-    "CRWD": {
-      "shares": 17.0,
-      "entry_price": 246.97999572753906,
-      "entry_date": "2026-09-21"
-    },
-    "FTNT": {
-      "shares": 24.0,
-      "entry_price": 172.4600067138672,
-      "entry_date": "2026-09-21"
-    },
-    "P": {
-      "shares": 45.0,
-      "entry_price": 122.87999725341797,
-      "entry_date": "2026-09-28"
-    },
-    "PANW": {
-      "shares": 14.0,
-      "entry_price": 387.94000244140625,
-      "entry_date": "2026-09-28"
-    },
-    "SMCI": {
-      "shares": 164.0,
-      "entry_price": 42.779998779296875,
-      "entry_date": "2026-10-05"
-    },
-    "DDOG": {
-      "shares": 25.0,
-      "entry_price": 280.30999755859375,
-      "entry_date": "2026-10-05"
     },
     "MPC": {
       "shares": 10.0,
       "entry_price": 461.0400085449219,
       "entry_date": "2026-10-12"
     },
-    "TWLO": {
-      "shares": 16.0,
-      "entry_price": 277.67999267578125,
-      "entry_date": "2026-10-12"
-    },
     "HUM": {
       "shares": 10.0,
       "entry_price": 450.489990234375,
       "entry_date": "2026-10-12"
+    },
+    "APA": {
+      "shares": 113.0,
+      "entry_price": 47.849998474121094,
+      "entry_date": "2026-10-19"
+    },
+    "PTC": {
+      "shares": 27.0,
+      "entry_price": 194.0,
+      "entry_date": "2026-10-19"
+    },
+    "CRM": {
+      "shares": 21.0,
+      "entry_price": 250.50999450683594,
+      "entry_date": "2026-10-19"
+    },
+    "ADP": {
+      "shares": 18.0,
+      "entry_price": 287.92999267578125,
+      "entry_date": "2026-10-19"
+    },
+    "PSX": {
+      "shares": 18.0,
+      "entry_price": 291.94000244140625,
+      "entry_date": "2026-10-19"
+    },
+    "CRL": {
+      "shares": 17.0,
+      "entry_price": 306.0899963378906,
+      "entry_date": "2026-10-19"
+    },
+    "IT": {
+      "shares": 25.0,
+      "entry_price": 209.0,
+      "entry_date": "2026-10-19"
+    },
+    "VEEV": {
+      "shares": 16.0,
+      "entry_price": 319.95001220703125,
+      "entry_date": "2026-10-19"
+    },
+    "A": {
+      "shares": 30.0,
+      "entry_price": 175.0399932861328,
+      "entry_date": "2026-10-19"
+    },
+    "RVTY": {
+      "shares": 35.0,
+      "entry_price": 154.44000244140625,
+      "entry_date": "2026-10-19"
+    },
+    "CNC": {
+      "shares": 76.0,
+      "entry_price": 71.19000244140625,
+      "entry_date": "2026-10-19"
+    },
+    "VLO": {
+      "shares": 12.0,
+      "entry_price": 447.3399963378906,
+      "entry_date": "2026-10-19"
     }
   },
-  "spy_shares": 0.49010679894410325,
-  "last_rebalance": "2026-10-12",
-  "nav": 116247.88
+  "spy_shares": 2.0,
+  "last_rebalance": "2026-10-19",
+  "nav": 102318.04
 }

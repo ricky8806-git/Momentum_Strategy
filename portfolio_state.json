@@ -1,15 +1,5 @@
 {
   "holdings": {
-    "MPC": {
-      "shares": 10.0,
-      "entry_price": 461.0400085449219,
-      "entry_date": "2026-10-12"
-    },
-    "HUM": {
-      "shares": 10.0,
-      "entry_price": 450.489990234375,
-      "entry_date": "2026-10-12"
-    },
     "APA": {
       "shares": 113.0,
       "entry_price": 47.849998474121094,
@@ -18,21 +8,6 @@
     "PTC": {
       "shares": 27.0,
       "entry_price": 194.0,
-      "entry_date": "2026-10-19"
-    },
-    "CRM": {
-      "shares": 21.0,
-      "entry_price": 250.50999450683594,
-      "entry_date": "2026-10-19"
-    },
-    "ADP": {
-      "shares": 18.0,
-      "entry_price": 287.92999267578125,
-      "entry_date": "2026-10-19"
-    },
-    "PSX": {
-      "shares": 18.0,
-      "entry_price": 291.94000244140625,
       "entry_date": "2026-10-19"
     },
     "CRL": {
@@ -50,53 +25,58 @@
       "entry_price": 319.95001220703125,
       "entry_date": "2026-10-19"
     },
-    "RVTY": {
-      "shares": 35.0,
-      "entry_price": 154.44000244140625,
-      "entry_date": "2026-10-19"
-    },
-    "CNC": {
-      "shares": 76.0,
-      "entry_price": 71.19000244140625,
-      "entry_date": "2026-10-19"
-    },
-    "NOW": {
-      "shares": 13.0,
-      "entry_price": 156.3800048828125,
-      "entry_date": "2026-10-26"
-    },
-    "ZBRA": {
-      "shares": 5.0,
-      "entry_price": 381.3299865722656,
-      "entry_date": "2026-10-26"
-    },
-    "WDAY": {
-      "shares": 10.0,
-      "entry_price": 209.52000427246094,
-      "entry_date": "2026-10-26"
-    },
-    "HPQ": {
-      "shares": 62.0,
-      "entry_price": 33.650001525878906,
-      "entry_date": "2026-10-26"
-    },
     "ACN": {
       "shares": 8.0,
       "entry_price": 252.00999450683594,
-      "entry_date": "2026-10-26"
-    },
-    "IQV": {
-      "shares": 7.0,
-      "entry_price": 276.55999755859375,
       "entry_date": "2026-10-26"
     },
     "BBY": {
       "shares": 21.0,
       "entry_price": 98.86000061035156,
       "entry_date": "2026-10-26"
+    },
+    "LLY": {
+      "shares": 3.0,
+      "entry_price": 1428.8299560546875,
+      "entry_date": "2026-11-02"
+    },
+    "TMO": {
+      "shares": 7.0,
+      "entry_price": 710.6900024414062,
+      "entry_date": "2026-11-02"
+    },
+    "EL": {
+      "shares": 51.0,
+      "entry_price": 108.93000030517578,
+      "entry_date": "2026-11-02"
+    },
+    "FDS": {
+      "shares": 17.0,
+      "entry_price": 325.0400085449219,
+      "entry_date": "2026-11-02"
+    },
+    "GDDY": {
+      "shares": 53.0,
+      "entry_price": 103.69999694824219,
+      "entry_date": "2026-11-02"
+    },
+    "AMGN": {
+      "shares": 11.0,
+      "entry_price": 470.1499938964844,
+      "entry_date": "2026-11-02"
+    },
+    "ABBV": {
+      "shares": 19.0,
+      "entry_price": 292.0,
+      "entry_date": "2026-11-02"
+    },
+    "WAT": {
+      "shares": 11.0,
+      "entry_price": 479.0400085449219,
+      "entry_date": "2026-11-02"
     }
   },
-  "spy_shares": 1.0,
-  "last_rebalance": "2026-10-26",
-  "nav": 104101.74
+  "spy_shares": 3.0,
+  "last_rebalance": "2026-11-02",
+  "nav": 95053.59
 }

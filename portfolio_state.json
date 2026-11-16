@@ -5,11 +5,6 @@
       "entry_price": 194.0,
       "entry_date": "2026-10-19"
     },
-    "ACN": {
-      "shares": 8.0,
-      "entry_price": 252.00999450683594,
-      "entry_date": "2026-10-26"
-    },
     "BBY": {
       "shares": 21.0,
       "entry_price": 98.86000061035156,
@@ -20,19 +15,9 @@
       "entry_price": 1428.8299560546875,
       "entry_date": "2026-11-02"
     },
-    "TMO": {
-      "shares": 7.0,
-      "entry_price": 710.6900024414062,
-      "entry_date": "2026-11-02"
-    },
     "FDS": {
       "shares": 17.0,
       "entry_price": 325.0400085449219,
-      "entry_date": "2026-11-02"
-    },
-    "AMGN": {
-      "shares": 11.0,
-      "entry_price": 470.1499938964844,
       "entry_date": "2026-11-02"
     },
     "ABBV": {
@@ -60,11 +45,6 @@
       "entry_price": 295.42999267578125,
       "entry_date": "2026-11-09"
     },
-    "MRNA": {
-      "shares": 16.0,
-      "entry_price": 245.39999389648438,
-      "entry_date": "2026-11-09"
-    },
     "BDX": {
       "shares": 19.0,
       "entry_price": 209.2899932861328,
@@ -84,9 +64,34 @@
       "shares": 11.0,
       "entry_price": 357.25,
       "entry_date": "2026-11-09"
+    },
+    "EL": {
+      "shares": 31.0,
+      "entry_price": 111.08999633789062,
+      "entry_date": "2026-11-16"
+    },
+    "ALLE": {
+      "shares": 18.0,
+      "entry_price": 191.25,
+      "entry_date": "2026-11-16"
+    },
+    "CDW": {
+      "shares": 20.0,
+      "entry_price": 173.3000030517578,
+      "entry_date": "2026-11-16"
+    },
+    "ROP": {
+      "shares": 7.0,
+      "entry_price": 481.0,
+      "entry_date": "2026-11-16"
+    },
+    "TECH": {
+      "shares": 48.0,
+      "entry_price": 72.83000183105469,
+      "entry_date": "2026-11-16"
     }
   },
-  "spy_shares": 3.3046193480164257,
-  "last_rebalance": "2026-11-09",
-  "nav": 92240.08
+  "spy_shares": 1.0,
+  "last_rebalance": "2026-11-16",
+  "nav": 90390.1
 }

@@ -1,48 +1,8 @@
 {
   "holdings": {
-    "PTC": {
-      "shares": 27.0,
-      "entry_price": 194.0,
-      "entry_date": "2026-10-19"
-    },
-    "BBY": {
-      "shares": 21.0,
-      "entry_price": 98.86000061035156,
-      "entry_date": "2026-10-26"
-    },
-    "LLY": {
-      "shares": 3.0,
-      "entry_price": 1428.8299560546875,
-      "entry_date": "2026-11-02"
-    },
-    "FDS": {
-      "shares": 17.0,
-      "entry_price": 325.0400085449219,
-      "entry_date": "2026-11-02"
-    },
-    "ABBV": {
-      "shares": 19.0,
-      "entry_price": 292.0,
-      "entry_date": "2026-11-02"
-    },
-    "HUM": {
-      "shares": 9.0,
-      "entry_price": 415.0,
-      "entry_date": "2026-11-09"
-    },
     "MCK": {
       "shares": 3.0,
       "entry_price": 1051.6700439453125,
-      "entry_date": "2026-11-09"
-    },
-    "MTD": {
-      "shares": 2.0,
-      "entry_price": 1806.5799560546875,
-      "entry_date": "2026-11-09"
-    },
-    "ADP": {
-      "shares": 13.0,
-      "entry_price": 295.42999267578125,
       "entry_date": "2026-11-09"
     },
     "BDX": {
@@ -55,43 +15,68 @@
       "entry_price": 265.5799865722656,
       "entry_date": "2026-11-09"
     },
-    "SWK": {
-      "shares": 35.0,
-      "entry_price": 113.66999816894531,
-      "entry_date": "2026-11-09"
-    },
     "LH": {
       "shares": 11.0,
       "entry_price": 357.25,
       "entry_date": "2026-11-09"
     },
-    "EL": {
-      "shares": 31.0,
-      "entry_price": 111.08999633789062,
-      "entry_date": "2026-11-16"
+    "MAS": {
+      "shares": 59.0,
+      "entry_price": 83.72000122070312,
+      "entry_date": "2026-11-23"
     },
-    "ALLE": {
-      "shares": 18.0,
-      "entry_price": 191.25,
-      "entry_date": "2026-11-16"
+    "MSI": {
+      "shares": 9.0,
+      "entry_price": 529.3300170898438,
+      "entry_date": "2026-11-23"
     },
-    "CDW": {
-      "shares": 20.0,
-      "entry_price": 173.3000030517578,
-      "entry_date": "2026-11-16"
+    "MRSH": {
+      "shares": 24.0,
+      "entry_price": 209.16000366210938,
+      "entry_date": "2026-11-23"
     },
-    "ROP": {
+    "AJG": {
+      "shares": 17.0,
+      "entry_price": 281.8900146484375,
+      "entry_date": "2026-11-23"
+    },
+    "DGX": {
+      "shares": 19.0,
+      "entry_price": 262.0,
+      "entry_date": "2026-11-23"
+    },
+    "SJM": {
+      "shares": 37.0,
+      "entry_price": 133.14999389648438,
+      "entry_date": "2026-11-23"
+    },
+    "AIZ": {
+      "shares": 15.0,
+      "entry_price": 320.57000732421875,
+      "entry_date": "2026-11-23"
+    },
+    "VLTO": {
+      "shares": 42.0,
+      "entry_price": 116.98999786376953,
+      "entry_date": "2026-11-23"
+    },
+    "TGT": {
+      "shares": 29.0,
+      "entry_price": 170.0,
+      "entry_date": "2026-11-23"
+    },
+    "IDXX": {
       "shares": 7.0,
-      "entry_price": 481.0,
-      "entry_date": "2026-11-16"
+      "entry_price": 688.6099853515625,
+      "entry_date": "2026-11-23"
     },
-    "TECH": {
-      "shares": 48.0,
-      "entry_price": 72.83000183105469,
-      "entry_date": "2026-11-16"
+    "REGN": {
+      "shares": 5.0,
+      "entry_price": 935.7999877929688,
+      "entry_date": "2026-11-23"
     }
   },
-  "spy_shares": 1.0,
-  "last_rebalance": "2026-11-16",
-  "nav": 90390.1
+  "spy_shares": 2.0,
+  "last_rebalance": "2026-11-23",
+  "nav": 87530.84
 }
